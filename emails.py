@@ -1,4 +1,9 @@
 import smtplib
+from tkinter import *
+root = Tk()
+root.title("email")
+root.geometry("400x400")
+root.mainloop()
 smtp_object = smtplib.SMTP('smtp.gmail.com',587)
 smtp_object.ehlo()
 smtp_object.starttls()
