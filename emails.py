@@ -56,13 +56,13 @@ class MyWindow:
         your_name = self.t6.get()
         name = self.t7.get()
         body = self.t5.get()
-        m = "Dear, "  + name + ","+ "\n" +body +"\n"+"Regards,"+"\n"+your_name
+        m = "Dear "  + name + ","+ "\n" +body +"\n"+"Regards,"+"\n"+your_name
     
     def informal(self):
         your_name = self.t6.get()
         name = self.t7.get()
         body = self.t5.get()
-        m = "Hello, " + name + ","+ "\n" +body +"\n"+"Thanks,"+"\n"+your_name
+        m = "Hello " + name + ","+ "\n" +body +"\n"+"Thanks,"+"\n"+your_name
     def sendEmail(self):
         subject = self.t4.get()
         to_address = self.t3.get()
