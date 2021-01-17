@@ -50,7 +50,7 @@ class MyWindow:
         m = "Hello, " + name + ","+ "\n" +body +"\n"+"Thanks,"+"\n"+your_name
     def sendEmail(self):
         subject = self.t4.get()
-        m = slef.t5.get()
+        m = self.t5.get()
         msg = 'Subject: '+subject+'\n'+ m
         smtp_object.sendmail(from_address,to_address,msg)
         
