@@ -1,10 +1,6 @@
 import smtplib
 from tkinter import *
 import getpass
-root = Tk()
-root.title("email")
-root.geometry("400x400")
-root.mainloop()
 smtp_object = smtplib.SMTP('smtp.gmail.com',587)
 smtp_object.ehlo()
 smtp_object.starttls()
@@ -40,3 +36,7 @@ class MyWindow:
                 msg = 'Subject: '+subject+'\n'+message
                 smtp_object.sendmail(from_address,to_address,msg)
 send_email()
+root = Tk()
+root.title("email")
+root.geometry("400x400")
+root.mainloop()
