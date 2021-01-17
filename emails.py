@@ -40,3 +40,4 @@ class MyWindow:
             msg = 'Subject: '+subject+'\n'+message
             smtp_object.sendmail(from_address,to_address,msg)
         send_email()
+        root.mainloop()
