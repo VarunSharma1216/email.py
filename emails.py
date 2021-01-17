@@ -29,7 +29,7 @@ class MyWindow:
         self.t3.place(x=400, y=200)
     def sendEmail(self):
         subject = 'Hello'
-        message = 'Hi, how are you?'
+        message =  greeting + m + endgreeting
         to_address = self.t3.get()
         msg = 'Subject: '+subject+'\n'+message
         smtp_object.sendmail(from_address,to_address,msg)
