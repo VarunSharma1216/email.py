@@ -8,7 +8,7 @@ class MyWindow:
     def __init__(self, win):
         self.lbl1=Label(win, text='Email:')
         self.lbl2=Label(win, text='Password:')
-        self.lbl3=Label(win, text='Email address of person you want to send the email to:')
+        self.lbl3=Label(win, text='Recipient\'s email: ')
         self.lbl4=Label(win, text='Subject:')
         self.lbl5=Label(win, text='Main Message:')
         self.t1=Entry(bd=3)
@@ -36,7 +36,7 @@ class MyWindow:
         password = str(self.t2.get())
         smtp_object.login(from_address,password)
         self.lbl3.place(x=100, y=200)
-        self.t3.place(x=450, y=200)
+        self.t3.place(x=225, y=200)
         self.b2.place(x = 100, y = 450)
         self.b3.place(x=100, y=300)
         self.b4.place(x = 200, y = 300)
@@ -45,24 +45,29 @@ class MyWindow:
         self.t5.place(x = 200, y = 400)
         self.lbl5.place(x = 100, y= 400)
         self.lbl20.place(x = 100, y=250)
-        self.lbl21.place(x = 350, y=250)
+        self.lbl21.place(x = 375, y=250)
         self.t6.place(x = 175, y = 250)
-        self.t7.place(x = 450, y = 250)
+        self.t7.place(x = 500, y = 250)
     def formal(self):
         global m
         global body
-        m = "Dear, " + name + ","+ "\n" +body +"\n"+"Regards,"+"\n"+your_name
+        global name
+        global your_name
+        m = "Dear, " + "\n" + name + ","+ "\n" +body +"\n"+"Regards,"+"\n"+your_name
     
     def informal(self):
-        m = "Hello, " + name + ","+ "\n" +body +"\n"+"Thanks,"+"\n"+your_name
+        m = "Hello, " + "\n" + name + ","+ "\n" +body +"\n"+"Thanks,"+"\n"+your_name
     def sendEmail(self):
         subject = self.t4.get()
         m = self.t5.get()
+        to_address = self.t3.get()
+        your_name = self.t6.get()
+        name = self.t7.get()
         msg = 'Subject: '+subject+'\n'+ m
         smtp_object.sendmail(from_address,to_address,msg)
         
 window=Tk()
 mywin=MyWindow(window)
-window.title('Hello Python')
-window.geometry("400x300+10+10")
+window.title('EzMail')
+window.geometry("800x700+10+10")
 window.mainloop()
