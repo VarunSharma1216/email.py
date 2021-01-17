@@ -16,7 +16,7 @@ class MyWindow:
         self.t3=Entry()
         self.t4=Entry()
         self.t5=Entry()
-        self.b2 = Button(win, text='Send email:',command = self.sendEmail)
+        self.b2 = Button(win, text='Send email',command = self.sendEmail)
         self.b3 = Button(win, text='Formal',command = self.formal)
         self.b4 = Button(win, text='Informal',command = self.informal)
         self.lbl1.place(x=100, y=50)
@@ -25,22 +25,29 @@ class MyWindow:
         self.b1.place(x=100, y=150)
         self.t1.place(x=200, y=50)
         self.t2.place(x=200, y=100)
+        self.lbl20=Label (win, text='Your name:')
+        self.lbl21=Label (win, text='Recipient\'s name:')
+        self.t6=Entry()
+        self.t7=Entry()
     
     def login(self):
         global from_address 
         from_address = str(self.t1.get())
         password = str(self.t2.get())
         smtp_object.login(from_address,password)
-        
         self.lbl3.place(x=100, y=200)
         self.t3.place(x=450, y=200)
-        self.b2.place(x = 100, y = 250)
+        self.b2.place(x = 100, y = 450)
         self.b3.place(x=100, y=300)
         self.b4.place(x = 200, y = 300)
         self.lbl4.place(x = 100, y = 350)
         self.t4.place(x = 200, y = 350)
         self.t5.place(x = 200, y = 400)
-        
+        self.lbl5.place(x = 100, y= 400)
+        self.lbl20.place(x = 100, y=250)
+        self.lbl21.place(x = 350, y=250)
+        self.t6.place(x = 175, y = 250)
+        self.t7.place(x = 450, y = 250)
     def formal(self):
         global m
         global body
