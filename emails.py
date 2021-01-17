@@ -8,9 +8,10 @@ smtp_object = smtplib.SMTP('smtp.gmail.com',587)
 smtp_object.ehlo()
 smtp_object.starttls()
 import getpass
-email = getpass.getpass('Email: ')
-password = getpass.getpass('Password: ')
-smtp_object.login(email,password)
+def login:
+    email = getpass.getpass('Email: ')
+    password = getpass.getpass('Password: ')
+    smtp_object.login(email,password)
 from_address = email
 to_address = input("Enter the emails of whoever you want to send it to: ").split()
 def send_email():
