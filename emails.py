@@ -26,18 +26,17 @@ class MyWindow:
                 self.b1.place(x=100, y=150)
                 self.b2.place(x=200, y=150)
         def login(self):
-            email = getpass.getpass('Email: ')
-            password = getpass.getpass('Password: ')
-            smtp_object.login(email,password)
-        from_address = email
-        to_address = input("Enter the emails of whoever you want to send it to: ").split()
+                email = getpass.getpass('Email: ')
+                password = getpass.getpass('Password: ')
+                smtp_object.login(email,password)
+                from_address = email
+                to_address = input("Enter the emails of whoever you want to send it to: ").split()
         def send_email(self):
-            subject = input('Enter the subject line: ')
-            name = input("Who are you sending the email to: ")
-            body = input("What is the message you want to send: " )
-            your_name = input("Enter your full name: ")
-            message = "Hello " + name+ ","+ "\n" +body +"\n"+"Thanks,"+"\n"+your_name
-            msg = 'Subject: '+subject+'\n'+message
-            smtp_object.sendmail(from_address,to_address,msg)
-        send_email()
-        root.mainloop()
+                subject = input('Enter the subject line: ')
+                name = input("Who are you sending the email to: ")
+                body = input("What is the message you want to send: " )
+                your_name = input("Enter your full name: ")
+                message = "Hello " + name+ ","+ "\n" +body +"\n"+"Thanks,"+"\n"+your_name
+                msg = 'Subject: '+subject+'\n'+message
+                smtp_object.sendmail(from_address,to_address,msg)
+send_email()
