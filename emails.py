@@ -8,7 +8,7 @@ smtp_object = smtplib.SMTP('smtp.gmail.com',587)
 smtp_object.ehlo()
 smtp_object.starttls()
 import getpass
-def login:
+def login():
     email = getpass.getpass('Email: ')
     password = getpass.getpass('Password: ')
     smtp_object.login(email,password)
