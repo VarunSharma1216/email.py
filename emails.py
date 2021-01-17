@@ -4,6 +4,11 @@ import getpass
 smtp_object = smtplib.SMTP('smtp.gmail.com',587)
 smtp_object.ehlo()
 smtp_object.starttls()
+global body
+global name
+global your_name
+global msg
+global m
 class MyWindow:
     def __init__(self, win):
         self.lbl1=Label(win, text='Email:')
@@ -49,19 +54,19 @@ class MyWindow:
         self.t6.place(x = 175, y = 250)
         self.t7.place(x = 500, y = 250)
     def formal(self):
-        global m
-        global body
-        global name
-        global your_name
-        m = "Dear, " + "\n" + name + ","+ "\n" +body +"\n"+"Regards,"+"\n"+your_name
+        your_name = self.t6.get()
+        name = self.t7.get()
+        body = self.t5.get()
+        m= str("Dear, " + "\n" + name + ","+ "\n" +body +"\n"+"Regards,"+"\n"+your_name)
     
     def informal(self):
-        m = "Hello, " + "\n" + name + ","+ "\n" +body +"\n"+"Thanks,"+"\n"+your_name
+        your_name = self.t6.get()
+        name = self.t7.get()
+        body = self.t5.get()
+        m= str("Hello, " + "\n" + name + ","+ "\n" +body +"\n"+"Thanks,"+"\n"+your_name)
     def sendEmail(self):
         subject = self.t4.get()
         to_address = self.t3.get()
-        your_name = self.t6.get()
-        name = self.t7.get()
         msg = 'Subject: '+subject+'\n'+ m
         smtp_object.sendmail(from_address,to_address,msg)
         
