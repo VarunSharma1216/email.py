@@ -30,12 +30,12 @@ class MyWindow:
     def sendEmail(self):
         subject = 'hi'
         message = 'hi'
-        to_address = 'anshul.kolli@gmail.com'
+        to_address = self.t3.get()
         msg = 'Subject: '+subject+'\n'+message
         smtp_object.sendmail(from_address,to_address,msg)
         
 window=Tk()
 mywin=MyWindow(window)
 window.title('Hello Python')
-window.geometry("400x300+10+10")
+window.geometry("500x400+10+10")
 window.mainloop()
