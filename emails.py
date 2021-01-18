@@ -59,6 +59,10 @@ class MyWindow:
         m = "Dear "  + name + ","+ "\n" +body +"\n"+"Regards,"+"\n"+your_name
     
     def informal(self):
+        global m
+        global body
+        global name
+        global your_name
         your_name = self.t6.get()
         name = self.t7.get()
         body = self.t5.get()
