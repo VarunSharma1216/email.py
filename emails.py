@@ -41,7 +41,7 @@ class MyWindow:
         self.b3.place(x=100, y=400)
         self.b4.place(x = 200, y = 400)
         self.lbl4.place(x = 100, y = 300)
-        self.t4.place(x = 200, y = 300)
+        self.t4.place(x = 175, y = 300)
         self.t5.place(x = 200, y = 350)
         self.lbl5.place(x = 100, y= 350)
         self.lbl20.place(x = 100, y=250)
